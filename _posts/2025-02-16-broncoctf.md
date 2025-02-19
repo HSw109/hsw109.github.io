@@ -2,7 +2,7 @@
 title: BroncoCTF   2025 Writeup
 date: 2025-02-18 15:00:30 
 categories: [Write-ups, BroncoCTF2025]
-tags: [web]     
+tags: [misc, crypto, forensic, OSINT]     
 description: not web chall xD
 math: true
 ---
