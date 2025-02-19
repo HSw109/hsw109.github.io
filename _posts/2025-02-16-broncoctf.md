@@ -207,7 +207,7 @@ analyze_positions()
 
 
 
-Yes, at the time i see that, i remembered a challenge from another CTF, that use semaphore to encode the flag. This is our familiar `"bronco"` in semaphore. Then i used [http://www.semaphorify.info/](http://www.semaphorify.info/) and [https://bobbiec.github.io/semaphore-decoder.html](https://bobbiec.github.io/semaphore-decoder.html) to decode the grid, and i got the flag.
+Yes, at the time i see that, i remembered a challenge from another CTF, that use semaphore to encode the flag. This is our familiar `"bronco"` in semaphore. Then i used `http://www.semaphorify.info/` and [https://bobbiec.github.io/semaphore-decoder.html](https://bobbiec.github.io/semaphore-decoder.html) to decode the grid, and i got the flag.
 
 > bronco 0hit5th4tk1nd0ff1ag
 
