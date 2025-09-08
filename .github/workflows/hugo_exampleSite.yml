@@ -57,7 +57,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --themesDir ../.. \
+            --themesDir .. \
             --source exampleSite \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Index pagefind
