@@ -22,7 +22,7 @@ You can deploy the chall [here](https://github.com/RPISEC/HackTheVote/tree/maste
 
 Firstly, you need a python script to bruteforce the input for initializing the challenge (ofc i used ChatGPT for that)
 
-![](https://github.com/HSw109/cdn/blob/main/commons/ctfs/hackthevote2024/htv3.png)
+{{< figure src="/commons/ctfs/hackthevote2024/htv1.png" caption="Python script bruteforce setup" >}}
 
 Here is the script
 
@@ -55,11 +55,11 @@ print(f"Input: {valid_input}, SHA-256 Hash: {resulting_hash}")
 ```
 
 
-![](/commons/ctfs/hackthevote2024/htv2.png)
+{{< figure src="/commons/ctfs/hackthevote2024/htv2.png" caption="Challenge interface" >}}
 
 At first glance, ofc we dunno what is this shit, after typed randomly sth that i knew that is python interpreter console.
 
-![](/commons/ctfs/hackthevote2024/htv4.png)
+{{< figure src="/commons/ctfs/hackthevote2024/htv4.png" caption="Python interpreter console" >}}
 
 Then, after spending all the morning to find out what i need to do, i dive into all [builts-in python function](https://docs.python.org/3/library/functions.html), then i have that 2 key functions: `eval` and `exec` that helps us bypass the validation, and also the environment variable. I've spent all the day to test everything that i could do:
 
