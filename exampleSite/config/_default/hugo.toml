@@ -1,5 +1,5 @@
 ## Base URL for the site
-baseURL = 'https://hsw109.github.io/hugo-brewm/'
+baseURL = 'https://hsw109.github.io/'
 ## Site title
 title = '''hsw's blog'''
 ## Use hugo-brewm theme
