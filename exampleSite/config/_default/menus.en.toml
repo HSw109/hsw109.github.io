@@ -271,8 +271,8 @@
   name       = 'karya karsa'
   pre        = 'karyakarsa'
 
-[[contrib]]
-  identifier = 'githubsponsors'
-  url        = 'https://github.com/sponsors/foxihd/'
-  name       = 'Become Github Sponsors'
-  pre        = 'githubsponsors'
+# [[contrib]]
+#   identifier = 'githubsponsors'
+#   url        = 'https://github.com/sponsors/foxihd/'
+#   name       = 'Become Github Sponsors'
+#   pre        = 'githubsponsors'

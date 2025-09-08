@@ -54,15 +54,15 @@
     other = "Discussion"
 [contrast]
     other = "Contrast"
-[contrib]
-    other = "Contribute"
-[contribAskReader]
-    other = "Enjoy this article?"
-[contribAskReaderResponse]
-    other = "Awesome!"
-[contribAskReaderToContribute]
-    one = "You can also support me by making the following contributions:"
-    other = "You can also support us by making the following contributions:"
+# [contrib]
+#     other = "Contribute"
+# [contribAskReader]
+#     other = "Enjoy this article?"
+# [contribAskReaderResponse]
+#     other = "Awesome!"
+# [contribAskReaderToContribute]
+#     one = "You can also support me by making the following contributions:"
+#     other = "You can also support us by making the following contributions:"
 [contribCoffeeStat]
     other = "Did you know that"
 [contribCoffeeStatPost]

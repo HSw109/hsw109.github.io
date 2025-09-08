@@ -5,7 +5,7 @@ description: "How to configure the menu in Hugo Brewm theme"
 date: 2025-01-26
 lastmod: 2025-02-04
 type: post
-draft: false
+draft: true
 translationKey: menus
 coffee: 1
 tags: ['configuration', 'menu']

@@ -125,9 +125,9 @@ enableRobotsTXT = true
     ## Author information
     [params.author]
         ## site author's name
-        name = 'Author Name'
+        name = 'hsw'
         ## Author's email (will be used for RSS feed)
-        email = 'email@example.com'
+        email = 'letruong7a21@gmail.com'
         ## Co-authors information (optional)
         coauthor = [
             {name = "A.N. Other", bio = "This quick paragraph is written in site configuration (hugo.toml). Therefore, no markdown support. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
@@ -223,12 +223,12 @@ enableRobotsTXT = true
         ## Default social card image
         images = "https://repository-images.githubusercontent.com/923527728/46a32a19-69ac-45b3-91a4-c4d299fb234b" ## recommended resolution: 1200 x 630px
 
-        ## Enable Twitter cards
-        # twitter = true
-        ## Twitter creator handle
-        # twitterCreator = "@username"
-        ## Twitter site handle
-        # twitterSite = "@username"
+        # Enable Twitter cards
+        twitter = true
+        # Twitter creator handle
+        twitterCreator = "@hsw109"
+        # Twitter site handle
+        twitterSite = "@hsw109"
 
         ## Enable OpenGraph
         # opengraph = true
