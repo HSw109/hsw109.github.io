@@ -4,7 +4,7 @@ date: 2025-02-02
 description: "..."
 draft: false
 author: "hsw"
-type: "post"
+type: "hidden"
 tags: [web]
 categories: [cheatsheet]
 cover: 'https://0xn3va.gitbook.io/cheat-sheets/~gitbook/ogimage/-ManKChM-RzjwIaAAyEI'
