@@ -1,11 +1,11 @@
 ---
 type: 'slide'
 title: 'welcome👋'
-cover: 'https://raw.githubusercontent.com/foxihd/hugo-et-hd/master/static/svg/flowlines/28.svg'
+cover: '/commons/svgs/1012405.png'
 weight: 1
 params:
     headless: true
     target: 'https://github.com/foxihd/hugo-brewm'
 ---
 
-Im HSw, this is place for my cybersec journey!
+Im HSw, this is the place for my cybersec journey!

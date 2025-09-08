@@ -2,30 +2,91 @@
     /* default contrast */
     --ac-light: #36c;
     --fg-light: #111;
-    --bg-light: #f9f9fb;
+    --bg-light: rgba(249, 249, 251, 0.85);  /* Semi-transparent light background */
     --midtone: gray;
     --fg-dark: #f9f9fb;
-    --bg-dark: #111;
+    --bg-dark: rgba(112, 112, 112, 0.699);      /* Semi-transparent dark background */
     --ac-dark: #fa0;
 
     /* less contrast */
     --ac-light-less: #36c;
     --fg-light-less: #13253d;
-    --bg-light-less: #e7e2e2;
+    --bg-light-less: rgba(231, 226, 226, 0.85);
     --midtone-less: #7d8490;
     --fg-dark-less: #e7e2e2;
-    --bg-dark-less: #13253d;
+    --bg-dark-less: rgba(19, 37, 61, 0.85);
     --ac-dark-less: #fa0;
 
     /* more contrast */
     --ac-light-more: #36c;
     --fg-light-more: #000;
-    --bg-light-more: #fff;
+    --bg-light-more: rgba(255, 255, 255, 0.9);
     --midtone-more: gray;
     --fg-dark-more: #fff;
-    --bg-dark-more: #000;
+    --bg-dark-more: rgba(0, 0, 0, 0.9);
     --ac-dark-more: #fa0;
 
     /* mark & selector highlight color */
     --hl: yellow;
 }
+
+/* Background image setup */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-image: url('/commons/bg/1004632.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Anime cursor follower */
+#anime-cursor-follower {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease-out;
+    transform-origin: center bottom;
+}
+
+#anime-cursor-follower img {
+    width: 40%;
+    height: 40%;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Animation for blinking */
+@keyframes blink {
+    0%, 90% { opacity: 1; }
+    95% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+#anime-cursor-follower.blink img {
+    animation: blink 3s infinite;
+}
+
+/* Flip animation when cursor changes direction */
+#anime-cursor-follower.flip {
+    transform: scaleX(-1);
+}
+
+/* Hover effect when over clickable elements */
+#anime-cursor-follower.excited {
+    animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.1); }
+}
+

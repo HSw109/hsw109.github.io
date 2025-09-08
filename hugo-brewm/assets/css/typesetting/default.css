@@ -253,6 +253,7 @@ details.presentation > summary {
     font-size: 0.9em;
     font-weight: normal;
     content: attr(aria-description);
+    color: rgb(245, 245, 239);
 }
 
 .t {

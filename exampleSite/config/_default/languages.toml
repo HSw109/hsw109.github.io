@@ -12,7 +12,7 @@
 [id]
     title = 'Contoh'
     contentDir = 'content/id'
-    disabled = false
+    disabled = true
     languageCode = 'id-ID'
     languageDirection = 'ltr'
     languageName = 'Bahasa Indonesia'
@@ -32,7 +32,7 @@
 
 [it]
     contentDir = 'content/it'
-    disabled = false
+    disabled = true
     languageCode = 'it-IT'
     languageDirection = 'ltr'
     languageName = 'Italian'

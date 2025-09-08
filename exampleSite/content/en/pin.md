@@ -1,4 +1,4 @@
----
+<!-- ---
 type: 'slide'
 title: 'Pin'
 params:
@@ -34,4 +34,4 @@ If images are not square, the layout will displayed as masonry style.
 {{< pin img="https://raw.githubusercontent.com/foxihd/hugo-et-hd/master/static/svg/flowlines/10.svg" label="Item 4" url="#my-ecommerce" quote="<s>$299</s> $199" >}}
 {{< pin img="https://raw.githubusercontent.com/foxihd/hugo-et-hd/master/static/svg/flowlines/11.svg" label="Item 5" url="#my-ecommerce" quote="<s>$399</s> $299" >}}
 {{< pin img="https://raw.githubusercontent.com/foxihd/hugo-et-hd/master/static/svg/flowlines/12.svg" label="Item 6" url="#my-ecommerce" quote="Out of stock" >}}
-{{< pin "end" >}}
+{{< pin "end" >}} -->

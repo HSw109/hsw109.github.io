@@ -5,9 +5,9 @@ params:
     headless: true
 ---
 
-**Example Links**
+**Connections**
 
-- [Example Link 1](#)
-- [Example Link 2](#)
-- [Example Link 3](#)
-- [Example Link 4](#)
+- [Linkedin](https://www.linkedin.com/in/hsw109)
+- [Gmail](mailto:truonglevan.works@gmail.com)
+- [Instagram](https://www.instagram.com/truoqwf_/)
+

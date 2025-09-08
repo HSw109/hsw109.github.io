@@ -1,4 +1,4 @@
----
+<!-- ---
 type: 'footer'
 coffee: 2
 params:
@@ -9,4 +9,4 @@ params:
 
 - [More Link 1](#)
 - [More Link 2](#)
-- [More Link 3](#)
+- [More Link 3](#) -->

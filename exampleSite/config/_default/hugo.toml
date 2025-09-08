@@ -11,7 +11,7 @@ canonifyURLs = true
 ## Default language for content
 defaultContentLanguage = 'en'
 ## Put default language in subdirectory
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 ## Show placeholder for missing translations
 enableMissingTranslationPlaceholders = true
 ## Use sections for main menu
@@ -100,19 +100,19 @@ enableRobotsTXT = true
 ## Site parameters
 [params]
     ## Site title
-    title = "Example"
+    title = "hsw's blog"
     ## Site description
     description = "An ExampleSite built with Hugo and Hugo-Brewm theme"
     ## Copyright notice
-    copyright = "Copyleft 2025 &copy; Author"
+    copyright = "hsw"
     ## Hide "powered by hugo" on colophon
-    # HideHugoCredit = true
+    HideHugoCredit = true
     ## Enable extended metadata (social cards)
     extMeta = true
     ## Enable coffee metric
     coffeeStat = true
     ## Default social card image, recommended resolution: 1200 x 630px
-    # images = "example.com/img/social-share.jpg"
+    images = "/commons/svgs/1.svg"
     ## Do not block AI user agent for robot.txt
     AllowAIRobots = false
     ## or BearMode--Minimize clutter for small site; Disable breadcrumbs menu, share button, related posts, colophon and redaction history.
@@ -129,9 +129,9 @@ enableRobotsTXT = true
         ## Author's email (will be used for RSS feed)
         email = 'letruong7a21@gmail.com'
         ## Co-authors information (optional)
-        coauthor = [
-            {name = "A.N. Other", bio = "This quick paragraph is written in site configuration (hugo.toml). Therefore, no markdown support. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
-        ]
+        # coauthor = [
+        #     {name = "A.N. Other", bio = "This quick paragraph is written in site configuration (hugo.toml). Therefore, no markdown support. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
+        # ]
 
     ## Comments configuration
     [params.comments]
@@ -175,7 +175,7 @@ enableRobotsTXT = true
         ## Enable slide carousel
         disableSlide = false
         ## Enable taxonomy listing carousel
-        disableListing = false
+        disableListing = true
         ## Select taxonomy listing to be featured
         featuredListing = ['categories', 'series']
 
