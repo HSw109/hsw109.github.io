@@ -1,7 +1,7 @@
 ## Base URL for the site
-baseURL = 'https://foxihd.github.io/hugo-brewm/'
+baseURL = 'https://hsw109.github.io/hugo-brewm/'
 ## Site title
-title = 'Example'
+title = '''hsw's blog'''
 ## Use hugo-brewm theme
 theme = 'hugo-brewm'
 ## Enable Git information for pages, (e.g. lastMod date information)
