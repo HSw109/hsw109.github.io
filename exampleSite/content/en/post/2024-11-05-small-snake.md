@@ -22,7 +22,7 @@ You can deploy the chall [here](https://github.com/RPISEC/HackTheVote/tree/maste
 
 Firstly, you need a python script to bruteforce the input for initializing the challenge (ofc i used ChatGPT for that)
 
-![](https://github.com/hsw109/cdn/commons/ctfs/hackthevote2024/htv3.png)
+![](https://github.com/HSw109/cdn/blob/main/commons/ctfs/hackthevote2024/htv3.png)
 
 Here is the script
 
