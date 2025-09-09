@@ -150,8 +150,10 @@ const matchMediaColor = () => {
         moreContrast.checked = true;
     } else if (window.matchMedia('(prefers-contrast: less)').matches) {
         lessContrast.checked = true;
-    } else {
+    } else if (window.matchMedia('(prefers-contrast: default)').matches) {
         defaultContrast.checked = true;
+    } else {
+        moreContrast.checked = true;
     }
 };
 
