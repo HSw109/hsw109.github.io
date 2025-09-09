@@ -1,6 +1,6 @@
 ---
 type: 'slide'
-title: '☕︎'
+title: '☕︎ click me!'
 audio: "/commons/music/blckclv.mp3"
 params:
     headless: true
