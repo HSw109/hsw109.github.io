@@ -253,6 +253,7 @@ function setStretch() {
 // Initialize localStorage
 function hasLocalStorage() {
     try {
+        localStorage.setItem('contrast', 'more');
         localStorage.is = 'enable';
         localStorage.removeItem('is');
         return true;
