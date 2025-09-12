@@ -7,7 +7,7 @@ flair: 'yay'
 
 ## HSw
 
-She's cute.
+she's cute, right?
 
 I'm Truong (a.k.a Hsw), 21 years old, currently lives in Hanoi, Vietnam, i enjoy CTFingggg. I'm in [@RaptX](https://ctftime.org/team/357584) and [@AresX](https://ctftime.org/team/128734/) (sometimes)
 - 2019 - 2022: Physics - HUS High School for Gifted Students (HSGS)
