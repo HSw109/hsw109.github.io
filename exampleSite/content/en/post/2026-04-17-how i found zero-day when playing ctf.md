@@ -13,10 +13,10 @@ stage: 'budding'
 toc: true
 ---
 
-Yeah, of course as the title said, now i'm happy to announce that i may have my first ever zero-day just by playing CTF. So here is how it's happened.
+LOL finally i can publish it after 5 months (Drupal is slow asf), you can see my SA here [https://www.drupal.org/sa-core-2026-002](https://www.drupal.org/sa-core-2026-002). So here is how it's happened.
 # The story
 
-Two months ago, as usual i played CTF on the weekend with [VTLet](https://ctftime.org/team/409894) (which is my company CTF team and i am the leader) and this time we join the [Infobahn CTF](https://ctftime.org/event/2878). And i could say the challenges are crazy awesome! And i'm quickly look at the web challenges, and there are one challenge that authored by my friend @yuu_2802. After taking a look at it then i realized that it was a zero-day 🤯 (which is never happened on my CTF life) and then i decided to spend all my time i have to solve it, the image below can confirm 😂
+Two months ago, as usual i played CTF on the weekend with [VTLet](https://ctftime.org/team/409894) (which is my company CTF team and i am the leader) and this time we join the [Infobahn CTF](https://ctftime.org/event/2878). And i could say the challenges are crazy awesome! And i'm quickly look at the web challenges, and there are one challenge that authored by my friend @yuu_2802. After taking a look at it then i realized that it was a zero-day 🤯 (which is never happened on my CTF life) and then i decided to spend all my time i have to solve it, the image below can confirm it.
 
 ![](/commons/ctfs/infobahn2026/Pastedimage20260106214347.png)
 
@@ -133,7 +133,7 @@ Quickly i realized some of these lib also in PHPGGC
 
 ![](/commons/ctfs/infobahn2026/Pastedimage20260107152237.png)
 
-Andddd eventually i got RCE with the Guzzle/FW1 with no debugging, no reading a single line of code on Guzzle 😂 then i made a comment:
+Andddd eventually i got RCE with the Guzzle/FW1 with no debugging, no reading a single line of code on Guzzle, then i made a comment:
 
 ![](/commons/ctfs/infobahn2026/Pastedimage20260107152912.png)
 
