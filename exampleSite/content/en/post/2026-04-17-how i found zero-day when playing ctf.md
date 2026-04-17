@@ -7,7 +7,7 @@ author: "hsw"
 type: "post"
 tags: [web, zero-day, drupal, deserialization]
 categories: [Write-ups]
-cover: '/commons/ctfs/infobahn2026/Pastedimage20260106214347.png'
+cover: 'https://2025.infobahnc.tf/files/62934d974ab996e6d0e754904e8525a7/logo-gray.png'
 translationKey: 'media'
 stage: 'budding'
 toc: true
