@@ -539,4 +539,6 @@ I've added my gadget chain to a fork of [PHPGGC](https://github.com/ambionics/ph
 
 **[https://github.com/HSw109/phpggc](https://github.com/HSw109/phpggc)**
 
-This chain targets Drupal core's `ViewExecutable` → `Sql` → `Select` flow described above, bypassing the `QueryPluginBase` type restriction introduced in the original fix. It achieves time-based SQL injection on Drupal **11.0.8+** (including 11.1.x and 11.2.x), which can be used to exfiltrate data from the database. Feel free to check it out, test it, and reach out if you have any questions!
+![](/commons/ctfs/infobahn2026/phpggc_drupal_sqli2.png)
+
+This chain targets Drupal core's `ViewExecutable` → `Sql` → `Select` flow described above, bypassing the `QueryPluginBase` type restriction introduced in the original fix. It achieves time-based SQL injection on Drupal >= 8.0.0 < 10.5.9 || >= 10.6.0 < 10.6.7 || >= 11.0.0 < 11.2.11 || >= 11.3.0 < 11.3.7, which can be used to exfiltrate data from the database. Feel free to check it out, test it, and reach out if you have any questions!
