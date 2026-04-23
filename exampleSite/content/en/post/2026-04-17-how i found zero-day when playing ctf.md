@@ -532,3 +532,11 @@ if __name__ == "__main__":
 ![](/commons/ctfs/infobahn2026/Pastedimage20260114114013.png)
 
 And yea, i achieved to leak everything in the database, but the password is hashed so i couldn't leverage to admin (it would be easily from admin to RCE). So it's kinda sad that i couldn't solve the challenge. I found this two days after the CTF ended and immediately reported it to the Drupal Security Team.
+
+# Exploit code
+
+I've added my gadget chain to a fork of [PHPGGC](https://github.com/ambionics/phpggc) — the well-known library of PHP `unserialize()` payloads. You can find my chain and the full exploit code here:
+
+**[https://github.com/HSw109/phpggc](https://github.com/HSw109/phpggc)**
+
+This chain targets Drupal core's `ViewExecutable` → `Sql` → `Select` flow described above, bypassing the `QueryPluginBase` type restriction introduced in the original fix. It achieves time-based SQL injection on Drupal **11.0.8+** (including 11.1.x and 11.2.x), which can be used to exfiltrate data from the database. Feel free to check it out, test it, and reach out if you have any questions!
