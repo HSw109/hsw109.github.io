@@ -49,17 +49,15 @@ body::before {
 /* Anime cursor follower */
 #anime-cursor-follower {
     position: fixed;
-    width: 100px;
-    height: 100px;
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.1s ease-out;
-    transform-origin: center bottom;
+    will-change: transform;
+    transform-origin: center center;
 }
 
 #anime-cursor-follower img {
-    width: 40%;
-    height: 40%;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 }
@@ -88,5 +86,44 @@ body::before {
 @keyframes bounce {
     0%, 100% { transform: translateY(0) scale(1); }
     50% { transform: translateY(-10px) scale(1.1); }
+}
+
+/* Lightbox overlay */
+#lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    cursor: zoom-out;
+}
+
+#lightbox-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#lightbox-overlay img {
+    max-width: 92vw;
+    max-height: 92vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    transition: transform 0.25s ease;
+}
+
+#lightbox-overlay.active img {
+    transform: scale(1);
+}
+
+#content p img {
+    cursor: zoom-in;
 }
 
